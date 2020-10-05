@@ -41,6 +41,7 @@ var stringifyJSON = function(obj) {
       arrayResult = arrayResult.concat(stringifyJSON(obj[index]));
 
     }
+    //return result surrounded by brackets
     return arrayResult + ']';
   }
   // check for nested objects
@@ -60,6 +61,7 @@ var stringifyJSON = function(obj) {
       //return result of calling stringifyJSON on array elements incased in stringified curly bracket
       objectResult = objectResult.concat('"' + key + '":' + stringifyJSON(obj[key]));
     }
+    //return result surrounded by curly braces
     return objectResult + '}';
   }
 };
